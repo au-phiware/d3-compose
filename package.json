@@ -1,6 +1,6 @@
 {
   "name": "d3-compose",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utility function that supports composition for `d3.call`s.",
   "main": "build/d3-compose.js",
   "module": "index",

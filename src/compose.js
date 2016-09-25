@@ -1,7 +1,7 @@
 var nonEnumerableProps = /^(valueOf|isPrototypeOf|to(Locale)?String|propertyIsEnumerable|hasOwnProperty)$/;
 
 export default function compose() {
-  for (var i = 0, start = arguments.length, args = Array(ii); i < ii; i++) {
+  for (var i = 0, start = arguments.length, args = Array(start); i < start; i++) {
     args[i] = arguments[i];
   }
 
