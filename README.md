@@ -3,11 +3,11 @@
 In the D3 way of functions as objects, composition of functions needs to also
 inherit the properties of the functions being composed. This is what this small
 utility aims to acheive, think of it as the combination of two Underscore's
-functionalities: [_.compose][1] and [_.extend][2].
+functionalities: [compose][1] and [extend][2].
 
 This allows the extention of common D3 modules such as axis, for example:
 
-```
+```js
 var height = ...;
 
 var xAxis = d3.axisBottom();
