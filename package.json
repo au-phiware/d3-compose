@@ -1,0 +1,36 @@
+{
+  "name": "d3-compose",
+  "version": "0.1.0",
+  "description": "Utility function that supports composition for `d3.call`s.",
+  "main": "build/d3-compose.js",
+  "module": "index",
+  "jsnext:main": "index",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/au-phiware/d3-compose.git"
+  },
+  "keywords": [
+    "d3",
+    "d3-module",
+    "selection",
+    "data-join"
+  ],
+  "author": "Corin Lawson",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/au-phiware/d3-compose/issues"
+  },
+  "homepage": "https://github.com/au-phiware/d3-compose#readme",
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "pretest": "npm run clean && rollup -f umd -n d3 -o build/d3-compose.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm test && uglifyjs build/d3-compose.js -c -m -o build/d3-compose.min.js",
+    "postpublish": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "rollup": "^0.36.0",
+    "tape": "^4.6.0",
+    "uglify-js": "^2.7.3"
+  }
+}
