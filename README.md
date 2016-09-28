@@ -20,9 +20,11 @@ var svg = d3.select("body").append("svg");
 
 svg.append("g")
     .attr("class", "x axis")
-    .call(xAxis);
+    .call(xAxis.domain([...]));
 ```
 
+For other ways of composing functions with D3 see [d3-wrap][3].
 
 [1]: http://underscorejs.org/#compose
 [2]: http://underscorejs.org/#extend
+[3]: https://www.npmjs.com/package/d3-wrap
