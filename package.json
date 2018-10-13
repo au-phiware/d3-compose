@@ -31,7 +31,7 @@
     "prepublish": "npm test && uglifyjs build/d3-compose.js -c -m -o build/d3-compose.min.js",
     "postpublish": "git push && git push --tags && npm run ghpages",
     "preghpages": "npm run docco",
-    "ghpages": "git add -f build src public docco.css && git checkout -m gh-pages && git checkout --theirs . && git add build src public docco.css && git commit -m \"v$npm_package_version\"`"
+    "ghpages": "git add -f build src public docco.css && git checkout -m gh-pages && git checkout --theirs . && git add build src public docco.css && git commit -m \"v$npm_package_version\""
   },
   "devDependencies": {
     "docco": "^0.8.0",
