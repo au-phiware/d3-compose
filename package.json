@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/au-phiware/d3-compose/issues"
   },
-  "homepage": "https://github.com/au-phiware/d3-compose#readme",
+  "homepage": "https://au-phiware.github.io/d3-compose/",
   "scripts": {
     "docco": "docco --output . src/*.js",
     "clean": "rm -rf build && mkdir build",
@@ -29,7 +29,9 @@
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublish": "npm test && uglifyjs build/d3-compose.js -c -m -o build/d3-compose.min.js",
-    "postpublish": "git push && git push --tags"
+    "postpublish": "git push && git push --tags && npm run ghpages",
+    "preghpages": "npm run docco",
+    "ghpages": "git add -f build src public docco.css && git checkout -m gh-pages && git checkout --theirs . && git add build src public docco.css && git commit -m \"v$npm_package_version\"`"
   },
   "devDependencies": {
     "docco": "^0.8.0",
