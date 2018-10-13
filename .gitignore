@@ -1,3 +1,7 @@
 build/
 node_modules
 npm-debug.log
+/public/
+/src/**/*.html
+/docco.css
+/index.html

@@ -22,15 +22,20 @@
   },
   "homepage": "https://github.com/au-phiware/d3-compose#readme",
   "scripts": {
+    "docco": "docco --output . src/*.js",
     "clean": "rm -rf build && mkdir build",
-    "pretest": "npm run clean && rollup -f umd -n d3 -o build/d3-compose.js -- index.js",
+    "pretest": "npm run clean && rollup -c",
     "test": "tape 'test/**/*-test.js'",
+    "preversion": "npm test",
+    "postversion": "npm publish",
     "prepublish": "npm test && uglifyjs build/d3-compose.js -c -m -o build/d3-compose.min.js",
     "postpublish": "git push && git push --tags"
   },
   "devDependencies": {
-    "rollup": "^0.36.0",
-    "tape": "^4.6.0",
-    "uglify-js": "^2.7.3"
+    "docco": "^0.8.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "tape": "^4.9.1",
+    "uglify-js": "^3.4.4"
   }
 }

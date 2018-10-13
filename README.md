@@ -8,19 +8,15 @@ functionalities: [compose][1] and [extend][2].
 This allows the extention of common D3 modules such as axis, for example:
 
 ```js
-var height = ...;
+function translate(selection, offset) {
+    selection.attr("transform", "translate(0 "+offset+")");
+}
+var xAxis = d3.axisBottom(d3.scaleLinear()
+    .domain([0, 10]).range([20, 180]));
 
-var xAxis = d3.axisBottom();
-
-xAxis = d3.compose(function(selection) {
-        selection.attr("transform", "translate(0 " + height + ")");
-    }, xAxis);
-
-var svg = d3.select("body").append("svg");
-
-svg.append("g")
-    .attr("class", "x axis")
-    .call(xAxis.domain([...]));
+var svg = d3.select("#example-1")
+    .append("g")
+        .call(d3.compose(translate, xAxis), 50);
 ```
 
 For other ways of composing functions with D3 see [d3-wrap][3].
